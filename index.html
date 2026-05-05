@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aroma Senja | Coffee & Space</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <style>
+        /* Sesuai instruksi, ini adalah hasil representasi dari compile SCSS */
+        :root {
+            --coffee-dark: #2c1810;
+            --coffee-light: #6f4e37;
+            --beige-warm: #f5f5dc;
+            --accent-color: #c4a484;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff;
+            color: var(--coffee-dark);
+        }
+
+        h1, h2, h3, .navbar-brand {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Hero Custom */
+        #hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        /* Menu/Portfolio Item */
+        .menu-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+        .menu-item img {
+            transition: transform 0.5s ease;
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+        .menu-overlay {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: rgba(44, 24, 16, 0.9);
+            color: white;
+            transition: bottom 0.4s ease;
+        }
+        .menu-item:hover img { transform: scale(1.1); }
+        .menu-item:hover .menu-overlay { bottom: 0; }
+
+        .btn-coffee {
+            background-color: var(--coffee-light);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            transition: 0.3s;
+        }
+        .btn-coffee:hover {
+            background-color: var(--coffee-dark);
+            color: white;
+        }
+
+        section { padding: 80px 0; }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navCoffee">
+
+    <nav id="navCoffee" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand fs-3" href="#">AROMA<span style="color: var(--accent-color);">SENJA</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-uppercase" href="#hero">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase" href="#about">Cerita Kami</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase" href="#services">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase" href="#portfolio">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase" href="#contact">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <div class="container text-center" data-aos="zoom-out" data-aos-duration="1500">
+            <h1 class="display-2 fw-bold mb-3">Temukan Ketenangan di Setiap Sesapan</h1>
+            <p class="lead mb-4">Kopi artisan dengan biji pilihan, diolah dengan cinta.</p>
+            <a href="#services" class="btn btn-coffee btn-lg rounded-pill px-5">Lihat Menu</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6" data-aos="fade-right">
+                    <img src="https://preview.redd.it/we-built-a-coffee-space-for-people-who-actually-love-coffee-v0-brsw876mbgkg1.png?width=640&crop=smart&auto=webp&s=f5b4fc08e85e7eb3dd18a0673cd49dd49e05840f" class="img-fluid shadow-lg rounded-4" alt="Coffee Pour">
+                </div>
+                <div class="col-md-6 ps-md-5" data-aos="fade-left">
+                    <h2 class="display-5 mb-4">Lebih dari Sekedar Kedai Kopi</h2>
+                    <p class="text-muted mb-4">Aroma Senja lahir dari kerinduan akan ruang ketiga—sebuah tempat antara rumah dan pekerjaan di mana ide mengalir dan percakapan dimulai.</p>
+                    <div class="d-flex gap-4">
+                        <div class="text-center">
+                            <h4 class="fw-bold mb-0">10+</h4>
+                            <small>Pilihan Biji</small>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="fw-bold mb-0">5k+</h4>
+                            <small>Pelanggan Setia</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services" class="bg-light">
+        <div class="container text-center">
+            <h2 class="display-5 mb-5" data-aos="fade-up">Menu Favorit</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm p-4 h-100">
+                        <h3>Signature Latte</h3>
+                        <p class="text-muted">Espresso halus dengan susu creamy dan sentuhan gula aren organik.</p>
+                        <span class="fw-bold text-success">Rp 28.000</span>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm p-4 h-100">
+                        <h3>Cold Brew Tonic</h3>
+                        <p class="text-muted">Hasil ekstraksi 12 jam yang menyegarkan dengan hint jeruk citrus.</p>
+                        <span class="fw-bold text-success">Rp 32.000</span>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card border-0 shadow-sm p-4 h-100">
+                        <h3>Butter Croissant</h3>
+                        <p class="text-muted">Pastry berlapis yang renyah di luar dan lembut di dalam.</p>
+                        <span class="fw-bold text-success">Rp 22.000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="text-center display-5 mb-5" data-aos="fade-down">Sudut Estetik Kami</h2>
+            <div class="row g-3">
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=600" alt="Interior">
+                        <div class="menu-overlay">Interior Space</div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=600" alt="Latte Art">
+                        <div class="menu-overlay">Barista Craft</div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?q=80&w=600" alt="Outdoor">
+                        <div class="menu-overlay">Indoor Vibe</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section id="faq" class="py-5 bg-light">
+    <div class="container" data-aos="fade-up">
+        <h2 class="text-center mb-5">FAQ</h2>
+        <div class="accordion accordion-flush shadow-sm rounded-4 overflow-hidden" id="accordionCoffee">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                        Apakah ada pilihan biji kopi (beans) lokal?
+                    </button>
+                </h2>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionCoffee">
+                    <div class="accordion-body text-muted">
+                        Tentu! Kami mengutamakan biji kopi Nusantara pilihan seperti Gayo, Toraja, dan Ciwidey yang disangrai dengan profil khusus untuk menjaga karakter rasanya.
+                    </div>
+                </div>
+                <div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+            Apakah bisa memesan tingkat kemanisan atau jenis susu tertentu?
+        </button>
+    </h2>
+    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionCoffee">
+        <div class="accordion-body text-muted">
+            Tentu saja! Anda bisa menyesuaikan tingkat kemanisan (sugar level) sesuai selera dan mengganti susu sapi dengan opsi <strong>Oat Milk</strong> atau <strong>Almond Milk</strong> untuk setiap minuman berbasis kopi kami.
+        </div>
+    </div>
+</div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                        Tersedia fasilitas Wi-Fi untuk kerja (WFC)?
+                    </button>
+                </h2>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionCoffee">
+                    <div class="accordion-body text-muted">
+                        Ya, kami menyediakan Wi-Fi berkecepatan tinggi dan banyak titik stop kontak di area indoor untuk mendukung produktivitas Anda.
+                    </div>
+                
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonial" class="py-5">
+    <div class="container text-center" data-aos="fade-up">
+        <h2 class="mb-5">Carousel</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm p-4 h-100 rounded-4">
+                    <p class="fst-italic">"Kopi susunya juara, rasa gula arennya nggak lebay dan kopinya tetap terasa."</p>
+                    <footer class="blockquote-footer mt-2">Andi Saputra</footer>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm p-4 h-100 rounded-4">
+                    <p class="fst-italic">"Tempat paling nyaman buat laptopan di Solo. Playlist lagunya juga enak-enak!"</p>
+                    <footer class="blockquote-footer mt-2">Budi Santoso</footer>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm p-4 h-100 rounded-4">
+                    <p class="fst-italic">"Croissant-nya sangat flaky dan cocok banget dicelup ke Hot Latte-nya."</p>
+                    <footer class="blockquote-footer mt-2">Siska Olivia</footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-5 bg-light">
+    <div class="container" data-aos="fade-up">
+        <h2 class="text-center mb-5">Temukan Kami</h2>
+        <div class="row g-4">
+            <div class="col-md-5">
+                <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+                    <h4 class="mb-4">Hubungi Kami</h4>
+                    <input type="text" class="form-control mb-3 py-2" placeholder="Nama Lengkap">
+                    <input type="email" class="form-control mb-3 py-2" placeholder="Email (Opsional)">
+                    <textarea class="form-control mb-3" rows="4" placeholder="Tanya tentang menu atau reservasi tempat..."></textarea>
+                    <button class="btn btn-dark w-100 py-2 rounded-pill">Kirim Pesan</button>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="map-container shadow-sm rounded-4 overflow-hidden" style="min-height: 350px;">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.138656157074!2d110.80630727419266!3d-7.559858574657158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a16900f890103%3A0x629555c823075677!2sStadion%20Manahan!5e0!3m2!1sid!2sid!4v1713146400000!5m2!1sid!2sid" 
+                        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>    
+
+    <section id="contact" style="background-color: var(--coffee-dark); color: white;">
+        <div class="container text-center">
+            <h2 class="display-5 mb-4" data-aos="fade-up">Kunjungi Kami</h2>
+            <p class="mb-5 opacity-75">Jl. Mangkuyudan Kraton Surakarta| Buka 08:00 - 22:00</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form>
+                        <input type="text" class="form-control mb-3 rounded-pill bg-transparent text-white" placeholder="Nama">
+                        <textarea class="form-control mb-4 rounded-4 bg-transparent text-white" rows="4" placeholder="Pesan/Reservasi"></textarea>
+                        <button class="btn btn-coffee w-100 rounded-pill">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 text-center bg-black text-white-50">
+        <p class="mb-0">&copy; 2026 Aroma Senja Coffee. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+// Variables
+$brand-color: #c4a484;
+$dark-coffee: #2c1810;
+$light-coffee: #6f4e37;
+$soft-beige: #fdfaf5;
+$transition-base: all 0.4s ease-in-out;
+
+// Base
+body {
+    background-color: $soft-beige;
+    -webkit-font-smoothing: antialiased;
+}
+
+// Navbar Minimalis
+.navbar {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    .nav-link {
+        font-weight: 400;
+        letter-spacing: 1.5px;
+        &:hover {
+            color: $brand-color !important;
+        }
+    }
+}
+
+// Card Hover Animation
+.card {
+    transition: $transition-base;
+    border-radius: 20px !important;
+    background: white;
+    
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+        background: $dark-coffee;
+        color: white;
+        
+        .text-muted { color: rgba(255,255,255,0.7) !important; }
+        .text-success { color: $brand-color !important; }
+    }
+}
+
+// Custom Button
+.btn-coffee {
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 15px rgba(111, 78, 55, 0.3);
+    
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(111, 78, 55, 0.4);
+    }
+}
+
+// Form Styling
+.form-control {
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 12px 20px;
+    
+    &:focus {
+        background-color: rgba(255,255,255,0.1);
+        border-color: $brand-color;
+        box-shadow: none;
+        color: white;
+    }
+}
+
+// Section Title
+h2.display-5 {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background-color: $brand-color;
+    }
+}
